@@ -35,18 +35,14 @@ def menuPage():
   print("Menu tersedia di McD")
   for i, category in enumerate(menu_category):
     print(f"{i}.{category}")
+  
   userInput = input("> ")
   clean()
-  if userInput == "1":
-    print("Menu > [BURGER]")
-    print("1. Chicken Cheese Deluxe -- 45k")
-    print("2. Beef Cheese Premium -- 40k")
-    menu = input("> ")
-    if menu == "1" or menu == "2":
-      print("Dimasukkan ke pemesanan")
-      clearScreen("c")
-      menuPage()
-    else:
+  if userInput == "0" or userInput =="1" or userInput == "2" or userInput == "3" or userInput == "4" or userInput == "5":
+    for i, submenu in menu_lists[userInput]:
+      print(f"{i}.{submenu} - Rp.{menu_lists[userInput]}")
+
+  else:
       clearScreen("e")
       menuPage()
 
